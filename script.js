@@ -48,7 +48,7 @@
 const bicudos = [
   { id: 2,  nome: "Big Boss",       sexo: "Macho", pai: "Juninho CLB",   mae: "Big 131 CLB",    foto: "big-boss.jpg",      genealogia: `<img src="big-boss.jpg"      alt="Big Boss"      style="width:100%;border-radius:4px;">` },
   { id: 3,  nome: "Big Impacto",    sexo: "Macho", pai: "De La Cruz",    mae: "Big Traira",     foto: "big-impacto.jpg",   genealogia: `<img src="big-impacto.jpg"   alt="Big Impacto"   style="width:100%;border-radius:4px;">` },
-  { id: 7,  nome: "Colossus",       sexo: "Macho", pai: "Rodhes",        mae: "Cassaca",        foto: "colossu.jpg",       genealogia: `<img src="colossu.jpg"       alt="Colossus"      style="width:100%;border-radius:4px;">` },
+  { id: 7,  nome: "Colossu",       sexo: "Macho", pai: "Rodhes",        mae: "Cassaca",        foto: "colossu.jpg",       genealogia: `<img src="colossu.jpg"       alt="Colossus"      style="width:100%;border-radius:4px;">` },
   { id: 9,  nome: "Fininho",        sexo: "Macho", pai: "De La Cruz",    mae: "Dama de Ouro",   foto: "fininho.jpg",       genealogia: `<img src="fininho.jpg"       alt="Fininho"       style="width:100%;border-radius:4px;">` },
   { id: 11, nome: "Magia Negra",    sexo: "Macho", pai: "Jeferson",      mae: "Afortunada",     foto: "magia-negra.jpg",   genealogia: `<img src="magia-negra.jpg"   alt="Magia Negra"   style="width:100%;border-radius:4px;">` },
   { id: 12, nome: "Nego Drama",     sexo: "Macho", pai: "Madrid",        mae: "Avani BLC",      foto: "nego-drama.jpg",    genealogia: `<img src="nego-drama.jpg"    alt="Nego Drama"    style="width:100%;border-radius:4px;">` },
