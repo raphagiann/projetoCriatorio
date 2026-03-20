@@ -46,12 +46,22 @@
 
 // ── CATÁLOGO ──
 const bicudos = [
-  { id: 1, nome: "Bicudo Rei",      sexo: "Macho",  pai: "Trovão do Cerrado", mae: "Estrela da Serra", foto: null, genealogia: null },
-  { id: 2, nome: "Bicudo Ouro",     sexo: "Macho",  pai: "Ventania",          mae: "Flor do Mato",     foto: null, genealogia: null },
-  { id: 3, nome: "Bicuda Pérola",   sexo: "Fêmea",  pai: "Trovão do Cerrado", mae: "Brisa da Manhã",   foto: null, genealogia: null },
-  { id: 4, nome: "Bicudo Diamante", sexo: "Macho",  pai: "Relâmpago",         mae: "Estrela da Serra", foto: null, genealogia: null },
-  { id: 5, nome: "Bicuda Safira",   sexo: "Fêmea",  pai: "Ventania",          mae: "Flor do Mato",     foto: null, genealogia: null },
-  { id: 6, nome: "Bicudo Trovão",   sexo: "Macho",  pai: "Relâmpago",         mae: "Brisa da Manhã",   foto: null, genealogia: null }
+  { id: 1,  nome: "Aue",           sexo: "Macho",  pai: "—", mae: "—", foto: "aue.jpg",           genealogia: `<img src="aue.jpg"           alt="Aue"           style="width:100%;border-radius:4px;">` },
+  { id: 2,  nome: "Big Boss",      sexo: "Macho",  pai: "—", mae: "—", foto: "big-boss.jpg",      genealogia: `<img src="big-boss.jpg"      alt="Big Boss"      style="width:100%;border-radius:4px;">` },
+  { id: 3,  nome: "Big Impacto",   sexo: "Macho",  pai: "—", mae: "—", foto: "big-impacto.jpg",   genealogia: `<img src="big-impacto.jpg"   alt="Big Impacto"   style="width:100%;border-radius:4px;">` },
+  { id: 4,  nome: "Big New",       sexo: "Macho",  pai: "—", mae: "—", foto: "big-new.jpg",       genealogia: `<img src="big-new.jpg"       alt="Big New"       style="width:100%;border-radius:4px;">` },
+  { id: 5,  nome: "Big Rio",       sexo: "Macho",  pai: "—", mae: "—", foto: "big-rio.jpg",       genealogia: `<img src="big-rio.jpg"       alt="Big Rio"       style="width:100%;border-radius:4px;">` },
+  { id: 6,  nome: "Cara Preta",    sexo: "Macho",  pai: "—", mae: "—", foto: "cara-preta.jpg",    genealogia: `<img src="cara-preta.jpg"    alt="Cara Preta"    style="width:100%;border-radius:4px;">` },
+  { id: 7,  nome: "Colossus",      sexo: "Macho",  pai: "—", mae: "—", foto: "colossu.jpg",       genealogia: `<img src="colossu.jpg"       alt="Colossus"      style="width:100%;border-radius:4px;">` },
+  { id: 8,  nome: "Cosa Nostra",   sexo: "Macho",  pai: "—", mae: "—", foto: "cosa-nostra.jpg",   genealogia: `<img src="cosa-nostra.jpg"   alt="Cosa Nostra"   style="width:100%;border-radius:4px;">` },
+  { id: 9,  nome: "Fininho",       sexo: "Macho",  pai: "—", mae: "—", foto: "fininho.jpg",       genealogia: `<img src="fininho.jpg"       alt="Fininho"       style="width:100%;border-radius:4px;">` },
+  { id: 10, nome: "Lobo Solitário",sexo: "Macho",  pai: "—", mae: "—", foto: "lobo-solitario.jpg",genealogia: `<img src="lobo-solitario.jpg" alt="Lobo Solitário" style="width:100%;border-radius:4px;">` },
+  { id: 11, nome: "Magia Negra",   sexo: "Macho",  pai: "—", mae: "—", foto: "magia-negra.jpg",   genealogia: `<img src="magia-negra.jpg"   alt="Magia Negra"   style="width:100%;border-radius:4px;">` },
+  { id: 12, nome: "Nego Drama",    sexo: "Macho",  pai: "—", mae: "—", foto: "nego-drama.jpg",    genealogia: `<img src="nego-drama.jpg"    alt="Nego Drama"    style="width:100%;border-radius:4px;">` },
+  { id: 13, nome: "Neon",          sexo: "Macho",  pai: "—", mae: "—", foto: "neon.jpg",          genealogia: `<img src="neon.jpg"          alt="Neon"          style="width:100%;border-radius:4px;">` },
+  { id: 14, nome: "Príncipe Jr",   sexo: "Macho",  pai: "—", mae: "—", foto: "principe-jr.jpg",   genealogia: `<img src="principe-jr.jpg"   alt="Príncipe Jr"   style="width:100%;border-radius:4px;">` },
+  { id: 15, nome: "Romário",       sexo: "Macho",  pai: "—", mae: "—", foto: "romario.jpg",       genealogia: `<img src="romario.jpg"       alt="Romário"       style="width:100%;border-radius:4px;">` },
+  { id: 16, nome: "Tribalista",    sexo: "Macho",  pai: "—", mae: "—", foto: "tribalista.jpg",    genealogia: `<img src="tribalista.jpg"    alt="Tribalista"    style="width:100%;border-radius:4px;">` }
 ];
 
 function renderCatalogo() {
