@@ -1,3 +1,50 @@
+// ── PARTÍCULAS DO HERO ──
+(function () {
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles;
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function createParticles() {
+    const count = Math.floor((W * H) / 18000);
+    particles = Array.from({ length: count }, () => ({
+      x:      Math.random() * W,
+      y:      Math.random() * H,
+      r:      Math.random() * 1.2 + 0.3,
+      speedX: (Math.random() - 0.5) * 0.25,
+      speedY: (Math.random() - 0.5) * 0.25,
+      alpha:  Math.random() * 0.35 + 0.05
+    }));
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(201,168,76,${p.alpha})`;
+      ctx.fill();
+      p.x += p.speedX;
+      p.y += p.speedY;
+      if (p.x < 0) p.x = W;
+      if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H;
+      if (p.y > H) p.y = 0;
+    });
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  createParticles();
+  draw();
+  window.addEventListener('resize', () => { resize(); createParticles(); });
+})();
+
+// ── CATÁLOGO ──
 const bicudos = [
   { id: 1, nome: "Bicudo Rei",      sexo: "Macho",  pai: "Trovão do Cerrado", mae: "Estrela da Serra", foto: null, genealogia: null },
   { id: 2, nome: "Bicudo Ouro",     sexo: "Macho",  pai: "Ventania",          mae: "Flor do Mato",     foto: null, genealogia: null },
@@ -14,7 +61,7 @@ function renderCatalogo() {
         ${b.foto
           ? `<img src="${b.foto}" alt="${b.nome}" />`
           : `<div class="bird-foto-placeholder">
-               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" xmlns="http://www.w3.org/2000/svg">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
                  <path d="M12 2C9 2 6 4 6 7c0 2 1 3.5 2.5 4.5C5 13 3 16 3 19h18c0-3-2-6-5.5-7.5C17 10.5 18 9 18 7c0-3-3-5-6-5z"/>
                </svg>
                <span>Foto não disponível</span>
@@ -45,14 +92,12 @@ function renderCatalogo() {
 function openModal(id) {
   const bird = bicudos.find(b => b.id === id);
   if (!bird) return;
-
   document.getElementById("modal-title").textContent = bird.nome;
   document.getElementById("modal-content").innerHTML = bird.genealogia
     ?? `<div class="genealogia-placeholder">
           <strong>Árvore genealógica em breve</strong>
           Os dados de ${bird.nome} serão disponibilizados em breve.
         </div>`;
-
   document.getElementById("modal").classList.add("active");
   document.body.style.overflow = "hidden";
 }
@@ -69,6 +114,7 @@ function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("open");
 }
 
+// ── SCROLL SUAVE ──
 function smoothScrollTo(targetY, duration) {
   const startY = window.scrollY;
   const diff = targetY - startY;
