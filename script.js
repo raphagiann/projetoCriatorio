@@ -124,7 +124,10 @@ function toggleTheme() {
 })();
 
 function toggleMenu() {
-  document.querySelector(".nav-links").classList.toggle("open");
+  const btn = document.querySelector(".nav-toggle");
+  const links = document.querySelector(".nav-links");
+  btn.classList.toggle("open");
+  links.classList.toggle("open");
 }
 
 // ── SCROLL SUAVE ──
@@ -150,6 +153,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     if (!target) return;
     e.preventDefault();
     smoothScrollTo(target.getBoundingClientRect().top + window.scrollY - 68, 900);
+    document.querySelector(".nav-toggle").classList.remove("open");
     document.querySelector(".nav-links").classList.remove("open");
   });
 });
