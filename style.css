@@ -130,11 +130,14 @@ body {
 .nav-toggle {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  justify-content: center;
+  gap: 0;
   background: none;
   border: none;
   cursor: pointer;
   padding: 4px;
+  width: 30px;
+  height: 30px;
 }
 
 .nav-toggle span {
@@ -142,13 +145,18 @@ body {
   width: 22px;
   height: 1.5px;
   background: var(--texto);
-  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), opacity 0.25s ease, background 0.3s;
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), opacity 0.2s ease;
   transform-origin: center;
+  position: absolute;
 }
 
-.nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.nav-toggle span:nth-child(1) { transform: translateY(-6px); }
+.nav-toggle span:nth-child(2) { transform: translateY(0); }
+.nav-toggle span:nth-child(3) { transform: translateY(6px); }
+
+.nav-toggle.open span:nth-child(1) { transform: translateY(0) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(0) rotate(-45deg); }
 
 /* ── HERO ── */
 .hero {
