@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Criatório Giannese</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="Preview.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="#home" class="nav-brand">
+      <img src="Preview.png" alt="Criatório Giannese" class="nav-logo" />
+      <span>Criatório Giannese</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="hero-inner">
+      <img src="Preview.png" alt="Criatório Giannese" class="hero-logo" />
+      <p class="hero-label">Criatório Especializado</p>
+      <h1>Criatório<br>Giannese</h1>
+      <p class="hero-sub">Dedicados à criação do Bicudo com excelência,<br>linhagem documentada e tradição.</p>
+      <a href="#catalogo" class="btn-primary">Ver Catálogo</a>
+    </div>
+    <div class="hero-line"></div>
+  </section>
+
+  <section id="sobre" class="sobre">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">A espécie</span>
+        <h2>O Bicudo</h2>
+      </div>
+      <div class="sobre-grid">
+        <div class="sobre-card">
+          <div class="card-num">01</div>
+          <h3>Canto Inconfundível</h3>
+          <p>Reconhecido pela potência e melodia do seu canto, o Bicudo é uma das aves mais valorizadas do Brasil.</p>
+        </div>
+        <div class="sobre-card">
+          <div class="card-num">02</div>
+          <h3>Linhagem Selecionada</h3>
+          <p>Cada exemplar é fruto de seleção criteriosa, com genealogia documentada e rastreável.</p>
+        </div>
+        <div class="sobre-card">
+          <div class="card-num">03</div>
+          <h3>Criação Responsável</h3>
+          <p>Ambiente saudável, alimentação balanceada e dedicação em cada etapa da criação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalogo" class="catalogo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Nossos exemplares</span>
+        <h2>Catálogo</h2>
+      </div>
+      <div class="catalogo-grid" id="catalogoGrid"></div>
+    </div>
+  </section>
+
+  <div id="modal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+      <p class="modal-tag">Árvore Genealógica</p>
+      <h2 id="modal-title"></h2>
+      <div id="modal-content" class="modal-content"></div>
+    </div>
+  </div>
+
+  <section id="contato" class="contato">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Fale conosco</span>
+        <h2>Contato</h2>
+      </div>
+      <p class="contato-sub">Entre em contato para adquirir ou saber mais sobre nossos bicudos.</p>
+      <div class="contato-lista">
+        <a href="mailto:giannese10@gmail.com" class="contato-item">
+          <span class="contato-label">E-mail</span>
+          <span class="contato-valor">giannese10@gmail.com</span>
+        </a>
+        <div class="contato-divider"></div>
+        <a href="https://wa.me/5531983198184" target="_blank" class="contato-item">
+          <span class="contato-label">WhatsApp</span>
+          <span class="contato-valor">(31) 98319-8184</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <span>Criatório Giannese</span>
+      <span>© 2026 — Todos os direitos reservados</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
