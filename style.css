@@ -703,7 +703,7 @@ footer {
   .sobre-card:not(:first-child) { padding-left: 0; }
 
   .catalogo { padding: 4rem 1.5rem; }
-  .catalogo-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .catalogo-grid { grid-template-columns: 1fr; gap: 1rem; }
 
   .contato { padding: 4rem 1.5rem; }
   .contato-lista { max-width: 100%; }
