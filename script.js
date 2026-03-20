@@ -120,6 +120,18 @@ function closeModal(event) {
 
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
 
+function toggleTheme() {
+  const html = document.documentElement;
+  html.setAttribute('data-theme', html.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+  localStorage.setItem('theme', html.getAttribute('data-theme'));
+}
+
+// Aplica tema salvo
+(function() {
+  const saved = localStorage.getItem('theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+})();
+
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("open");
 }
