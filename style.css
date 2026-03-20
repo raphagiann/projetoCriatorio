@@ -93,6 +93,15 @@ body {
 
 .nav-links a:hover { color: var(--dourado); }
 
+.nav-endereco {
+  font-size: 0.72rem;
+  color: var(--texto-suave);
+  letter-spacing: 0.06em;
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--borda);
+  white-space: nowrap;
+}
+
 /* Botão modo claro/escuro */
 .theme-toggle {
   background: none;
@@ -732,6 +741,7 @@ footer {
   }
   .nav-links.open { display: flex; }
   .nav-toggle { display: flex; }
+  .nav-endereco { border-left: none; padding-left: 0; font-size: 0.8rem; }
 
   .sobre { padding: 4rem 1.5rem; }
   .sobre-grid { grid-template-columns: 1fr; }
