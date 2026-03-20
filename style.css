@@ -199,6 +199,7 @@ body {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   font-weight: 500;
+  border-radius: 999px;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -303,25 +304,32 @@ body {
 
 .catalogo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5px;
-  background: var(--borda);
-  border: 1.5px solid var(--borda);
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  background: transparent;
+  border: none;
 }
 
 .bird-card {
   background: var(--branco);
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   cursor: default;
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  overflow: hidden;
 }
 
-.bird-card:hover { background: var(--bg); }
+.bird-card:hover {
+  background: var(--bg);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
 
 .bird-foto {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   border-bottom: 1px solid var(--borda);
 }
@@ -365,7 +373,7 @@ body {
 }
 
 .bird-body {
-  padding: 1.8rem;
+  padding: 1rem 1.2rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -375,7 +383,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .bird-header h3 {
@@ -401,9 +409,9 @@ body {
 .bird-meta {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.8rem;
-  padding-top: 1.2rem;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+  padding-top: 0.8rem;
   border-top: 1px solid var(--borda);
 }
 
@@ -426,7 +434,7 @@ body {
 
 .btn-genealogia {
   width: 100%;
-  padding: 0.7rem;
+  padding: 0.55rem;
   background: transparent;
   border: 1px solid var(--marrom-claro);
   color: var(--marrom);
@@ -435,6 +443,7 @@ body {
   text-transform: uppercase;
   font-weight: 500;
   cursor: pointer;
+  border-radius: 999px;
   transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   font-family: 'Inter', sans-serif;
 }
@@ -607,7 +616,7 @@ footer {
 /* Tablet */
 @media (max-width: 1024px) {
   .catalogo-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -640,7 +649,7 @@ footer {
   .sobre-card:not(:first-child) { padding-left: 0; }
 
   .catalogo { padding: 5rem 1.5rem; }
-  .catalogo-grid { grid-template-columns: 1fr; }
+  .catalogo-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .bird-body { padding: 1.4rem; }
 
   .contato { padding: 5rem 1.5rem; }
