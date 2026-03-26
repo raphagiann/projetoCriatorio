@@ -48,8 +48,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 3rem;
-  height: 68px;
+  padding: 0 clamp(0.5rem, 2vw, 3rem);
+  height: clamp(50px, 12vh, 68px);
   border-bottom: 1px solid var(--borda);
   transition: background 0.4s ease;
 }
@@ -77,7 +77,7 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2.5rem;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   align-items: center;
 }
 
@@ -167,7 +167,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4rem 2rem;
+  padding: clamp(2rem, 8vh, 4rem) clamp(1rem, 3vw, 2rem);
   position: relative;
   overflow: hidden;
 }
@@ -194,7 +194,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
+  gap: clamp(0.8rem, 2vw, 1.2rem);
   position: relative;
   z-index: 1;
 }
@@ -221,8 +221,8 @@ body {
 }
 
 .hero-logo {
-  width: 100px;
-  height: 100px;
+  width: clamp(80px, 15vw, 100px);
+  height: clamp(80px, 15vw, 100px);
   object-fit: contain;
   border-radius: 50%;
   border: 1px solid rgba(201,168,76,0.5);
@@ -250,7 +250,7 @@ body {
   font-size: 0.9rem;
   color: var(--texto-suave);
   font-weight: 300;
-  max-width: 420px;
+  max-width: clamp(260px, 90%, 420px);
   line-height: 1.8;
 }
 
@@ -288,9 +288,9 @@ body {
 
 /* ── SHARED ── */
 .container {
-  max-width: 1100px;
+  max-width: clamp(280px, 100%, 1200px);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(1rem, 3vw, 2rem);
 }
 
 .section-header {
@@ -316,7 +316,7 @@ body {
 
 /* ── SOBRE ── */
 .sobre {
-  padding: 7rem 2rem;
+  padding: clamp(3.5rem, 8vw, 7rem) clamp(1rem, 3vw, 2rem);
   background: var(--bg-alt);
   transition: background 0.4s ease;
 }
@@ -366,15 +366,15 @@ body {
 
 /* ── CATÁLOGO ── */
 .catalogo {
-  padding: 7rem 2rem;
+  padding: clamp(3.5rem, 8vw, 7rem) clamp(1rem, 3vw, 2rem);
   background: var(--bg);
   transition: background 0.4s ease;
 }
 
 .catalogo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(180px, 40vw, 220px), 1fr));
+  gap: clamp(0.8rem, 2vw, 1.5rem);
   background: transparent;
   border: none;
 }
@@ -546,9 +546,9 @@ body {
 .modal-box {
   background: var(--bg-card);
   border: 1px solid var(--borda);
-  padding: 3rem;
-  max-width: 560px;
-  width: 90%;
+  padding: clamp(1rem, 4vw, 3rem);
+  max-width: clamp(280px, 90%, 560px);
+  width: clamp(95%, 100% - 2rem, 560px);
   max-height: 80vh;
   overflow-y: auto;
   position: relative;
@@ -618,7 +618,7 @@ body {
 
 /* ── CONTATO ── */
 .contato {
-  padding: 7rem 2rem;
+  padding: clamp(3.5rem, 8vw, 7rem) clamp(1rem, 3vw, 2rem);
   background: var(--bg-alt);
   transition: background 0.4s ease;
 }
@@ -635,7 +635,7 @@ body {
 .contato-lista {
   display: flex;
   flex-direction: column;
-  max-width: 480px;
+  max-width: clamp(260px, 100%, 480px);
 }
 
 .contato-item {
@@ -671,7 +671,7 @@ body {
 /* ── FOOTER ── */
 footer {
   background: var(--navbar-bg);
-  padding: 1.5rem 3rem;
+  padding: clamp(1rem, 2vh, 1.5rem) clamp(1rem, 2vw, 3rem);
   border-top: 1px solid var(--borda);
   transition: background 0.4s ease;
 }
@@ -688,8 +688,8 @@ footer {
 /* ── WHATSAPP FLUTUANTE ── */
 .whatsapp-float {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: clamp(0.5rem, 2vh, 2rem);
+  right: clamp(0.5rem, 2vw, 2rem);
   z-index: 150;
   display: flex;
   align-items: center;
@@ -697,9 +697,9 @@ footer {
   background: #25d366;
   color: #fff;
   text-decoration: none;
-  padding: 0.75rem 1.2rem;
+  padding: clamp(0.6rem, 1vw, 0.75rem) clamp(0.8rem, 2vw, 1.2rem);
   border-radius: 999px;
-  font-size: 0.78rem;
+  font-size: clamp(0.7rem, 1.5vw, 0.78rem);
   font-weight: 500;
   letter-spacing: 0.05em;
   box-shadow: 0 4px 20px rgba(37,211,102,0.35);
@@ -718,9 +718,6 @@ footer {
   flex-shrink: 0;
 }
 
-@media (max-width: 600px) {
-  .whatsapp-float { bottom: 1.2rem; right: 1.2rem; padding: 0.7rem 1rem; font-size: 0.75rem; }
-}
 
 /* ── RESPONSIVE ── */
 
@@ -730,15 +727,8 @@ footer {
   .catalogo-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .catalogo-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
 /* Tablet pequeno */
 @media (max-width: 860px) {
-  .navbar { padding: 0 1.5rem; }
-
   .nav-links {
     display: flex;
     flex-direction: column;
@@ -767,47 +757,36 @@ footer {
   .nav-toggle { display: flex; }
   .nav-endereco { border-left: none; padding-left: 0; font-size: 0.8rem; }
 
-  .sobre { padding: 4rem 1.5rem; }
   .sobre-grid { grid-template-columns: 1fr; }
   .sobre-card { border-right: none; border-bottom: 1px solid var(--borda); padding: 2rem 0; }
   .sobre-card:last-child { border-bottom: none; }
   .sobre-card:not(:first-child) { padding-left: 0; }
 
-  .catalogo { padding: 4rem 1.5rem; }
   .catalogo-grid { grid-template-columns: 1fr; gap: 1rem; }
 
-  .contato { padding: 4rem 1.5rem; }
   .contato-lista { max-width: 100%; }
 
   .footer-inner { flex-direction: column; gap: 0.4rem; text-align: center; }
-  footer { padding: 1.2rem 1.5rem; }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
-  .navbar { padding: 0 1rem; height: 60px; }
-  .nav-links { top: 60px; }
+  .nav-toggle { display: flex; }
+  .nav-endereco { border-left: none; padding-left: 0; font-size: 0.8rem; }
 
-  .hero { padding: 4rem 1rem 3rem; min-height: 100svh; }
   .hero-line { display: none; }
-  .hero-logo { width: 80px; height: 80px; }
-  .hero-sub { font-size: 0.85rem; }
   .hero-sub br { display: none; }
 
-  .sobre { padding: 3.5rem 1rem; }
   .section-header { margin-bottom: 2.5rem; }
 
-  .catalogo { padding: 3.5rem 1rem; }
-  .catalogo-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .catalogo-grid { grid-template-columns: 1fr; }
   .bird-body { padding: 0.8rem; }
   .bird-header h3 { font-size: 1.1rem; }
 
-  .contato { padding: 3.5rem 1rem; }
   .contato-item { flex-direction: column; align-items: flex-start; gap: 0.25rem; padding: 1rem 0; }
   .contato-item:hover { padding-left: 0.4rem; }
   .contato-valor { font-size: 0.85rem; }
 
-  .modal-box { padding: 1.5rem 1rem; width: 95%; max-height: 90vh; }
   #modal-title { font-size: 1.4rem; margin-bottom: 1.2rem; }
 
   .footer-inner { font-size: 0.7rem; }
@@ -819,4 +798,213 @@ footer {
   .catalogo-grid { grid-template-columns: 1fr; }
   .bird-body { padding: 1rem; }
   .btn-primary { padding: 0.65rem 1.5rem; font-size: 0.7rem; }
+}
+
+/* Orientação Landscape - Mobile */
+@media (orientation: landscape) and (max-height: 600px) {
+  .navbar {
+    height: clamp(45px, 10vh, 60px);
+    padding: 0 clamp(0.5rem, 2vw, 1.5rem);
+  }
+
+  .nav-links {
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .nav-endereco {
+    font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+  }
+
+  .hero {
+    min-height: auto;
+    padding: clamp(1rem, 2vh, 2rem) clamp(1rem, 3vw, 2rem);
+    margin-top: clamp(45px, 10vh, 60px);
+  }
+
+  .hero-inner {
+    gap: clamp(0.5rem, 1vh, 0.8rem);
+  }
+
+  .hero-logo {
+    width: clamp(60px, 12vh, 80px);
+    height: clamp(60px, 12vh, 80px);
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+
+  .hero-label {
+    font-size: 0.65rem;
+  }
+
+  .hero-sub {
+    font-size: 0.8rem;
+    max-width: clamp(200px, 80%, 350px);
+  }
+
+  .btn-primary {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.65rem;
+  }
+
+  .nav-links.open {
+    max-height: 200px;
+  }
+
+  .sobre {
+    padding: clamp(2rem, 4vh, 3.5rem) clamp(1rem, 3vw, 2rem);
+  }
+
+  .catalogo {
+    padding: clamp(2rem, 4vh, 3.5rem) clamp(1rem, 3vw, 2rem);
+  }
+
+  .catalogo-grid {
+    gap: clamp(0.6rem, 1vw, 1rem);
+  }
+
+  .contato {
+    padding: clamp(2rem, 4vh, 3.5rem) clamp(1rem, 3vw, 2rem);
+  }
+
+  .whatsapp-float {
+    bottom: clamp(0.3rem, 1vh, 1rem);
+    right: clamp(0.3rem, 1vw, 1rem);
+    font-size: clamp(0.65rem, 1.2vw, 0.7rem);
+    padding: 0.5rem clamp(0.6rem, 1vw, 0.8rem);
+  }
+
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+}
+
+/* Telas muito grandes (> 1400px) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: clamp(1200px, 90%, 1400px);
+  }
+
+  .catalogo-grid {
+    gap: clamp(1.2rem, 2vw, 2rem);
+  }
+
+  .nav-links {
+    gap: clamp(2rem, 3vw, 3.5rem);
+  }
+
+  .section-header {
+    margin-bottom: 5rem;
+  }
+
+  .sobre-grid {
+    gap: 0 2rem;
+  }
+
+  .sobre-card {
+    padding: 3rem 2.5rem 3rem 0;
+  }
+
+  .sobre-card:not(:first-child) {
+    padding-left: 2.5rem;
+  }
+}
+
+/* Telas muito pequenas (< 320px) */
+@media (max-width: 319px) {
+  .nav-brand {
+    gap: 0.4rem;
+  }
+
+  .nav-brand span {
+    font-size: 0.9rem;
+  }
+
+  .nav-logo {
+    height: 32px;
+    width: 32px;
+  }
+
+  .hero-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 7vw, 2.5rem);
+  }
+
+  .hero-sub {
+    font-size: 0.8rem;
+    max-width: clamp(240px, 85%, 350px);
+  }
+
+  .btn-primary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.65rem;
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .section-tag {
+    font-size: 0.65rem;
+  }
+
+  .sobre-card h3 {
+    font-size: 0.85rem;
+  }
+
+  .sobre-card p {
+    font-size: 0.8rem;
+  }
+
+  .bird-header h3 {
+    font-size: 1rem;
+  }
+
+  .badge-sexo {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .bird-meta-row {
+    font-size: 0.75rem;
+  }
+
+  .btn-genealogia {
+    font-size: 0.65rem;
+    padding: 0.4rem;
+  }
+
+  .contato-label {
+    font-size: 0.65rem;
+  }
+
+  .contato-valor {
+    font-size: 0.8rem;
+  }
+
+  .whatsapp-float {
+    font-size: 0.65rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  #modal-title {
+    font-size: 1.2rem;
+  }
+
+  .modal-tag {
+    font-size: 0.6rem;
+  }
+
+  .footer-inner {
+    font-size: 0.65rem;
+  }
 }
