@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Criadouro RG</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="Preview.png" />
+  <link rel="icon" href="download.png" />
   <script>
     // Gera favicon circular dinamicamente
     (function() {
       const img = new Image();
-      img.src = 'Preview.png';
+      img.src = 'download.png';
       img.onload = function() {
         const c = document.createElement('canvas');
         c.width = c.height = 64;
@@ -31,7 +31,7 @@
 
   <nav class="navbar">
     <a href="#home" class="nav-brand">
-      <img src="Preview.png" alt="Criadouro RG" class="nav-logo" />
+      <img src="download.png" alt="Criadouro RG" class="nav-logo" />
       <span>Criadouro RG</span>
     </a>
     <ul class="nav-links">
@@ -55,7 +55,9 @@
   <section id="home" class="hero">
     <canvas id="hero-canvas"></canvas>
     <div class="hero-inner">
-      <img src="Preview.png" alt="Criadouro RG" class="hero-logo" />
+      <div class="hero-logo-wrap">
+        <img src="download.png" alt="Criadouro RG" class="hero-logo" />
+      </div>
       <p class="hero-label">Criatório Especializado</p>
       <h1>Criadouro<br>RG</h1>
       <p class="hero-sub">Dedicados à criação do Bicudo com excelência,<br>linhagem documentada e tradição.</p>
