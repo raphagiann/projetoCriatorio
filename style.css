@@ -1,5 +1,16 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* ── EFEITO WATERMARK PREMIUM ── */
+@keyframes breathe-watermark {
+  0%, 100% { opacity: 0.09; }
+  50%       { opacity: 0.16; }
+}
+
+@keyframes breathe-watermark-center {
+  0%, 100% { opacity: 0.04; }
+  50%       { opacity: 0.10; }
+}
+
 /* ── MODO ESCURO (padrão) ── */
 :root {
   --bg:          #0a0a0a;
@@ -369,17 +380,21 @@ body {
 .sobre::after {
   content: '';
   position: absolute;
-  bottom: -60px;
-  right: -60px;
-  width: 360px;
-  height: 360px;
-  background-image: url('download.png');
+  bottom: -50px;
+  right: -50px;
+  width: 480px;
+  height: 480px;
+  background-image: url('Captura de tela 2026-03-29 104303.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.07;
+  background-position: bottom right;
+  opacity: 0.13;
   pointer-events: none;
-  filter: invert(1) sepia(1) saturate(2) hue-rotate(355deg);
+  filter: sepia(0.6) saturate(1.4) brightness(1.05) contrast(0.95);
+  mask-image: radial-gradient(ellipse 80% 80% at 88% 88%, black 0%, rgba(0,0,0,0.6) 35%, transparent 68%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 88% 88%, black 0%, rgba(0,0,0,0.6) 35%, transparent 68%);
+  mix-blend-mode: luminosity;
+  animation: breathe-watermark 9s ease-in-out infinite;
 }
 
 .sobre-grid {
@@ -440,16 +455,20 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background-image: url('download.png');
+  width: 720px;
+  height: 720px;
+  background-image: url('Captura de tela 2026-03-29 104303.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.045;
+  opacity: 0.07;
   pointer-events: none;
-  filter: invert(1) sepia(1) saturate(2) hue-rotate(355deg);
+  filter: sepia(0.5) saturate(1.6) brightness(1.1) contrast(0.9);
+  mask-image: radial-gradient(ellipse 55% 55% at 50% 50%, black 0%, black 15%, rgba(0,0,0,0.5) 45%, transparent 68%);
+  -webkit-mask-image: radial-gradient(ellipse 55% 55% at 50% 50%, black 0%, black 15%, rgba(0,0,0,0.5) 45%, transparent 68%);
+  mix-blend-mode: luminosity;
   z-index: 0;
+  animation: breathe-watermark-center 11s ease-in-out infinite;
 }
 
 .catalogo-grid {
@@ -709,17 +728,21 @@ body {
 .contato::before {
   content: '';
   position: absolute;
-  top: -40px;
-  left: -80px;
-  width: 380px;
-  height: 380px;
-  background-image: url('download.png');
+  top: -50px;
+  left: -50px;
+  width: 460px;
+  height: 460px;
+  background-image: url('Captura de tela 2026-03-29 104303.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.07;
+  background-position: top left;
+  opacity: 0.13;
   pointer-events: none;
-  filter: invert(1) sepia(1) saturate(2) hue-rotate(355deg);
+  filter: sepia(0.6) saturate(1.4) brightness(1.05) contrast(0.95);
+  mask-image: radial-gradient(ellipse 80% 80% at 12% 12%, black 0%, rgba(0,0,0,0.6) 35%, transparent 68%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 12% 12%, black 0%, rgba(0,0,0,0.6) 35%, transparent 68%);
+  mix-blend-mode: luminosity;
+  animation: breathe-watermark 9s ease-in-out infinite 2s;
 }
 
 .contato .section-header h2 { color: var(--texto); }

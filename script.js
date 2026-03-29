@@ -52,7 +52,12 @@ const bicudos = [
   { id: 9,  nome: "Fininho",        sexo: "Macho", pai: "De La Cruz",    mae: "Dama de Ouro",   foto: "fininho.jpg",       genealogia: `<img src="fininho.jpg"       alt="Fininho"       style="width:100%;border-radius:4px;">` },
   { id: 11, nome: "Magia Negra",    sexo: "Macho", pai: "Jeferson",      mae: "Afortunada",     foto: "magia-negra.jpg",   genealogia: `<img src="magia-negra.jpg"   alt="Magia Negra"   style="width:100%;border-radius:4px;">` },
   { id: 12, nome: "Nego Drama",     sexo: "Macho", pai: "Madrid",        mae: "Avani BLC",      foto: "nego-drama.jpg",    genealogia: `<img src="nego-drama.jpg"    alt="Nego Drama"    style="width:100%;border-radius:4px;">` },
-  { id: 15, nome: "Romário",        sexo: "Macho", pai: "Fortuna",       mae: "Penata",         foto: "romario.jpg",       genealogia: `<img src="romario.jpg"       alt="Romário"       style="width:100%;border-radius:4px;">` }
+  { id: 15, nome: "Romário",        sexo: "Macho", pai: "Fortuna",       mae: "Penata",         foto: "romario.jpg",       genealogia: `<img src="romario.jpg"       alt="Romário"       style="width:100%;border-radius:4px;">` },
+  { id: 16, nome: "Madrilenho",     sexo: "Macho", pai: "Madrid",        mae: "Amsterdã",       foto: "madrileno.jpg",     genealogia: `<img src="madrileno.jpg"     alt="Madrilenho"    style="width:100%;border-radius:4px;">` },
+  { id: 17, nome: "Toretto",        sexo: "Macho", pai: "Van Diesel",    mae: "Goyatriz Filha", foto: "toretto.jpg",       genealogia: `<img src="toretto.jpg"       alt="Toretto"       style="width:100%;border-radius:4px;">` },
+  { id: 18, nome: "Big 245",        sexo: "Macho", pai: "Bigode Grosso", mae: "Manu V.C.",      foto: "big-245.jpg",       genealogia: `<img src="big-245.jpg"       alt="Big 245"       style="width:100%;border-radius:4px;">` },
+  { id: 19, nome: "Big Atraente",   sexo: "Macho", pai: "Bigode Grosso", mae: "Sedutora",       foto: "big-atraente.jpg",  genealogia: `<img src="big-atraente.jpg"  alt="Big Atraente"  style="width:100%;border-radius:4px;">` },
+  { id: 20, nome: "Rei Monet",      sexo: "Macho", pai: "Muralha II",    mae: "Fontana",        foto: "rei-monet.jpg",     genealogia: `<img src="rei-monet.jpg"     alt="Rei Monet"     style="width:100%;border-radius:4px;">` }
 ];
 
 function renderCatalogo() {
