@@ -2,130 +2,163 @@
 <html>
 <head>
   <meta charset="UTF-8"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       width: 1200px;
       height: 630px;
       overflow: hidden;
       background: #0a0a0a;
-      font-family: 'Cormorant Garamond', Georgia, serif;
+      position: relative;
     }
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap');
 
-    .bg {
+    /* Foto preenchendo tudo */
+    .photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* Overlay escuro em cima da foto */
+    .overlay {
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 70% 90% at 75% 50%, rgba(201,168,76,0.18) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 60% at 20% 50%, rgba(201,168,76,0.07) 0%, transparent 55%),
-        #0a0a0a;
+        linear-gradient(to right, rgba(5,5,5,0.97) 0%, rgba(5,5,5,0.88) 38%, rgba(5,5,5,0.55) 62%, rgba(5,5,5,0.25) 100%),
+        linear-gradient(to top,   rgba(5,5,5,0.6)  0%, transparent 50%);
     }
 
-    .photo {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 52%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      mask-image: linear-gradient(to left, rgba(0,0,0,0.92) 30%, rgba(0,0,0,0.45) 65%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.92) 30%, rgba(0,0,0,0.45) 65%, transparent 100%);
-    }
-
-    .content {
+    /* Brilho dourado sutil */
+    .glow {
       position: absolute;
       inset: 0;
+      background: radial-gradient(ellipse 50% 80% at 30% 50%, rgba(201,168,76,0.12) 0%, transparent 65%);
+    }
+
+    /* Linha vertical decorativa */
+    .line-v {
+      position: absolute;
+      left: 72px;
+      top: 60px;
+      bottom: 60px;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.35) 25%, rgba(201,168,76,0.35) 75%, transparent);
+    }
+
+    /* Conteúdo de texto */
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 58%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 0 80px;
-      gap: 18px;
+      padding: 0 80px 0 100px;
+      gap: 20px;
     }
 
     .tag {
       font-family: 'Inter', sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.28em;
+      font-size: 10.5px;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
       color: #c9a84c;
       font-weight: 400;
     }
 
-    .logo-row {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .logo-img {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(201,168,76,0.7);
-      object-fit: cover;
-      box-shadow: 0 0 24px rgba(201,168,76,0.25);
-    }
-
     h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 72px;
+      font-size: 78px;
       font-weight: 300;
       color: #f0e6d0;
-      line-height: 1.0;
+      line-height: 0.95;
       letter-spacing: -0.01em;
     }
 
-    .sub {
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      color: #8a7a65;
-      font-weight: 300;
-      max-width: 400px;
-      line-height: 1.75;
-      letter-spacing: 0.01em;
-    }
-
     .divider {
-      width: 48px;
+      width: 44px;
       height: 1px;
       background: linear-gradient(to right, #c9a84c, transparent);
     }
 
+    .sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 14.5px;
+      color: #8a7a65;
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 360px;
+    }
+
     .badge {
       font-family: 'Inter', sans-serif;
-      font-size: 10px;
-      letter-spacing: 0.18em;
+      font-size: 9.5px;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: #c9a84c;
-      border: 1px solid rgba(201,168,76,0.4);
+      border: 1px solid rgba(201,168,76,0.45);
       border-radius: 999px;
-      padding: 6px 16px;
-      display: inline-block;
+      padding: 7px 18px;
       width: fit-content;
     }
 
-    .line-v {
+    /* URL do site no rodapé */
+    .footer {
       position: absolute;
-      left: 56px;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.2) 30%, rgba(201,168,76,0.2) 70%, transparent);
+      bottom: 28px;
+      left: 100px;
+      right: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
+    .url {
+      font-family: 'Inter', sans-serif;
+      font-size: 9.5px;
+      letter-spacing: 0.14em;
+      color: rgba(201,168,76,0.4);
+      text-transform: lowercase;
+    }
+
+    .dots {
+      display: flex;
+      gap: 5px;
+    }
+
+    .dots span {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.25);
+    }
+    .dots span:first-child { background: rgba(201,168,76,0.55); }
   </style>
 </head>
 <body>
-  <div class="bg"></div>
   <img class="photo" src="Captura de tela 2026-03-29 104303.png" alt="" />
+  <div class="overlay"></div>
+  <div class="glow"></div>
   <div class="line-v"></div>
+
   <div class="content">
     <span class="tag">Criatório Especializado · Belo Horizonte</span>
     <h1>Criadouro<br>RG</h1>
     <div class="divider"></div>
     <p class="sub">Bicudos de linhagem documentada,<br>criados com excelência e tradição.</p>
     <span class="badge">Ver Catálogo</span>
+  </div>
+
+  <div class="footer">
+    <span class="url">raphagiann.github.io/projetoCriatorio</span>
+    <div class="dots"><span></span><span></span><span></span></div>
   </div>
 </body>
 </html>
