@@ -1,0 +1,9 @@
+{
+  "name": "criadouro-rg",
+  "version": "1.0.0",
+  "description": "Site do Criadouro RG",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
