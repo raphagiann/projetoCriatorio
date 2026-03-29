@@ -80,11 +80,17 @@ body {
 .nav-logo {
   height: 38px;
   width: 38px;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 50%;
   border: 1.5px solid rgba(201,168,76,0.7);
   box-shadow: 0 0 0 3px rgba(201,168,76,0.08), 0 0 14px rgba(201,168,76,0.18);
   transition: box-shadow 0.35s ease, border-color 0.35s ease;
+  mix-blend-mode: screen;
+}
+
+[data-theme="light"] .nav-logo {
+  mix-blend-mode: normal;
+  filter: invert(1);
 }
 
 .nav-brand:hover .nav-logo {
@@ -396,13 +402,19 @@ body {
 .hero-logo {
   width: 110px;
   height: 110px;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 50%;
   border: 1px solid rgba(201,168,76,0.75);
   box-shadow:
     0 0 0 1px rgba(201,168,76,0.1),
     0 0 28px rgba(201,168,76,0.22),
     0 0 60px rgba(201,168,76,0.09);
+  mix-blend-mode: screen;
+}
+
+[data-theme="light"] .hero-logo {
+  mix-blend-mode: normal;
+  filter: invert(1);
 }
 
 .hero-label {
