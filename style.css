@@ -686,7 +686,6 @@ body {
   opacity: 0.6;
   background: rgba(0,0,0,0.5);
   border-color: rgba(201,168,76,0.5);
-  pointer-events: none; /* clique vai pro overlay, não ao botão */
 }
 
 .video-featured .video-thumb.playing:hover .video-play,
@@ -814,14 +813,28 @@ body {
   .video-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .video-thumb--large { aspect-ratio: 16 / 9; }
   .video-title { font-size: 1rem; }
-  .video-thumb--large .video-title { font-size: 1.2rem; }
+  .video-thumb--large .video-title { font-size: 1.25rem; }
+  .video-play { width: 60px; height: 60px; }
+  .video-play svg { width: 20px; height: 20px; }
 }
 
 @media (max-width: 600px) {
-  .videos { padding: 3.5rem 1rem; }
-  .video-grid { grid-template-columns: 1fr; }
+  .videos { padding: 3rem 1rem; }
+  .video-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .video-thumb--large { aspect-ratio: 16 / 9; }
   .video-play { width: 56px; height: 56px; }
   .video-play svg { width: 18px; height: 18px; }
+  .video-play--sm { width: 40px; height: 40px; }
+  .video-play--sm svg { width: 13px; height: 13px; }
+  .video-meta { padding: 1rem 1rem 0.9rem; }
+  .video-title { font-size: 0.85rem; }
+  .video-thumb--large .video-title { font-size: 1.1rem; }
+  .video-desc { font-size: 0.7rem; }
+}
+
+@media (max-width: 380px) {
+  .video-grid { grid-template-columns: 1fr; }
+  .video-thumb--large { aspect-ratio: 4 / 3; }
 }
 
 /* ── CATÁLOGO ── */
