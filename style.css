@@ -657,6 +657,13 @@ body {
   box-shadow: 0 0 0 2px rgba(201,168,76,0.15), 0 8px 32px rgba(201,168,76,0.1);
 }
 
+/* Play/Pause icon toggle */
+.icon-play { fill: var(--dourado); }
+.icon-pause { display: none; fill: var(--dourado); }
+.video-thumb.playing .icon-play { display: none; }
+.video-thumb.playing .icon-pause { display: block; }
+
+/* Grid cards: hide overlay when playing */
 .video-thumb.playing .video-overlay {
   opacity: 0;
   pointer-events: none;
@@ -665,6 +672,25 @@ body {
 .video-thumb.playing:hover .video-overlay {
   opacity: 1;
   pointer-events: auto;
+}
+
+/* Featured: always keep overlay interactive for pause tap */
+.video-featured .video-thumb.playing .video-overlay {
+  opacity: 1;
+  pointer-events: auto;
+  background: transparent;
+}
+
+.video-featured .video-thumb.playing .video-play {
+  opacity: 0.35;
+  background: rgba(0,0,0,0.4);
+  border-color: rgba(201,168,76,0.3);
+}
+
+.video-featured .video-thumb.playing:hover .video-play {
+  opacity: 1;
+  background: rgba(201,168,76,0.28);
+  border-color: var(--dourado);
 }
 
 .video-overlay {
@@ -700,6 +726,9 @@ body {
   width: 22px;
   height: 22px;
   fill: var(--dourado);
+}
+
+.video-play .icon-play {
   margin-left: 4px;
 }
 

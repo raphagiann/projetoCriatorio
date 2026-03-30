@@ -45,8 +45,8 @@
 })();
 
 // ── PLAYER DE VÍDEO ──
-function toggleVideo(btn) {
-  const thumb = btn.closest('.video-thumb');
+function toggleVideo(el) {
+  const thumb = el.closest('.video-thumb');
   const video = thumb.querySelector('.video-player');
   if (!video) return;
   if (video.paused) {
