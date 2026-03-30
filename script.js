@@ -62,6 +62,56 @@ function toggleVideo(btn) {
   video.addEventListener('ended', () => thumb.classList.remove('playing'), { once: true });
 }
 
+function selectGridVideo(gridCard) {
+  const featured = document.querySelector('.video-featured .video-thumb');
+
+  // Pausa tudo
+  document.querySelectorAll('.video-player').forEach(v => {
+    v.pause();
+    v.closest('.video-thumb').classList.remove('playing');
+  });
+
+  // Troca título e descrição (mantém badge "Em Destaque" no featured)
+  const featTitle = featured.querySelector('.video-title').textContent;
+  const featDesc  = featured.querySelector('.video-desc').textContent;
+  const gridTitle = gridCard.querySelector('.video-title').textContent;
+  const gridDesc  = gridCard.querySelector('.video-desc').textContent;
+  featured.querySelector('.video-title').textContent = gridTitle;
+  featured.querySelector('.video-desc').textContent  = gridDesc;
+  gridCard.querySelector('.video-title').textContent = featTitle;
+  gridCard.querySelector('.video-desc').textContent  = featDesc;
+
+  // Troca os elementos <video>
+  const featVid = featured.querySelector('.video-player');
+  const gridVid = gridCard.querySelector('.video-player');
+  const featSrc = featVid ? featVid.getAttribute('src') : null;
+  const gridSrc = gridVid ? gridVid.getAttribute('src') : null;
+
+  if (featVid) featVid.remove();
+  if (gridVid) gridVid.remove();
+
+  function makeVideo(src) {
+    const v = document.createElement('video');
+    v.className = 'video-player';
+    v.setAttribute('src', src);
+    v.setAttribute('playsinline', '');
+    v.setAttribute('preload', 'metadata');
+    return v;
+  }
+
+  if (gridSrc) {
+    const v = makeVideo(gridSrc);
+    featured.insertBefore(v, featured.firstChild);
+    v.play();
+    featured.classList.add('playing');
+    v.addEventListener('ended', () => featured.classList.remove('playing'), { once: true });
+  }
+
+  if (featSrc) {
+    gridCard.insertBefore(makeVideo(featSrc), gridCard.firstChild);
+  }
+}
+
 // ── CATÁLOGO ──
 const bicudos = [
   { id: 2,  nome: "Big Boss",       sexo: "Macho", pai: "Juninho CLB",   mae: "Big 131 CLB",    foto: "big-boss.jpg",      genealogia: `<img src="big-boss.jpg"      alt="Big Boss"      style="width:100%;border-radius:4px;">` },

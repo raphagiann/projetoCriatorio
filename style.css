@@ -648,6 +648,15 @@ body {
   z-index: 0;
 }
 
+.video-thumb--selectable {
+  cursor: pointer;
+}
+
+.video-thumb--selectable:hover {
+  border-color: rgba(201,168,76,0.6);
+  box-shadow: 0 0 0 2px rgba(201,168,76,0.15), 0 8px 32px rgba(201,168,76,0.1);
+}
+
 .video-thumb.playing .video-overlay {
   opacity: 0;
   pointer-events: none;
