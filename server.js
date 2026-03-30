@@ -27,14 +27,38 @@ http.createServer((req, res) => {
   const ext         = path.extname(filePath).toLowerCase();
   const contentType = mime[ext] || 'application/octet-stream';
 
-  fs.readFile(filePath, (err, data) => {
+  fs.stat(filePath, (err, stat) => {
     if (err) {
       res.writeHead(404, { 'Content-Type': 'text/plain' });
       res.end('404 — Arquivo não encontrado');
       return;
     }
-    res.writeHead(200, { 'Content-Type': contentType });
-    res.end(data);
+
+    const fileSize = stat.size;
+    const range    = req.headers.range;
+
+    if (range) {
+      // Suporte a Range requests (necessário para vídeo no mobile/iOS)
+      const [startStr, endStr] = range.replace(/bytes=/, '').split('-');
+      const start = parseInt(startStr, 10);
+      const end   = endStr ? parseInt(endStr, 10) : fileSize - 1;
+      const chunk = end - start + 1;
+
+      res.writeHead(206, {
+        'Content-Range'  : `bytes ${start}-${end}/${fileSize}`,
+        'Accept-Ranges'  : 'bytes',
+        'Content-Length' : chunk,
+        'Content-Type'   : contentType,
+      });
+      fs.createReadStream(filePath, { start, end }).pipe(res);
+    } else {
+      res.writeHead(200, {
+        'Content-Length' : fileSize,
+        'Content-Type'   : contentType,
+        'Accept-Ranges'  : 'bytes',
+      });
+      fs.createReadStream(filePath).pipe(res);
+    }
   });
 
 }).listen(PORT, () => {
