@@ -44,6 +44,24 @@
   window.addEventListener('resize', () => { resize(); createParticles(); });
 })();
 
+// ── PLAYER DE VÍDEO ──
+function toggleVideo(btn) {
+  const thumb = btn.closest('.video-thumb');
+  const video = thumb.querySelector('.video-player');
+  if (!video) return;
+  if (video.paused) {
+    document.querySelectorAll('.video-player').forEach(v => {
+      if (v !== video) { v.pause(); v.closest('.video-thumb').classList.remove('playing'); }
+    });
+    video.play();
+    thumb.classList.add('playing');
+  } else {
+    video.pause();
+    thumb.classList.remove('playing');
+  }
+  video.addEventListener('ended', () => thumb.classList.remove('playing'), { once: true });
+}
+
 // ── CATÁLOGO ──
 const bicudos = [
   { id: 2,  nome: "Big Boss",       sexo: "Macho", pai: "Juninho CLB",   mae: "Big 131 CLB",    foto: "big-boss.jpg",      genealogia: `<img src="big-boss.jpg"      alt="Big Boss"      style="width:100%;border-radius:4px;">` },
