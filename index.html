@@ -18,12 +18,12 @@
   <meta name="description"        content="Criação especializada de Bicudos com excelência, linhagem documentada e tradição. Conheça nosso catálogo de exemplares selecionados." />
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="Captura de tela 2026-03-29 104303.png" />
+  <link rel="icon" href="Captura de tela 2026-03-29 193706.png" />
   <script>
     // Gera favicon circular dinamicamente
     (function() {
       const img = new Image();
-      img.src = 'Captura de tela 2026-03-29 104303.png';
+      img.src = 'Captura de tela 2026-03-29 193706.png';
       img.onload = function() {
         const c = document.createElement('canvas');
         c.width = c.height = 64;
@@ -32,7 +32,11 @@
         ctx.arc(32, 32, 32, 0, Math.PI * 2);
         ctx.closePath();
         ctx.clip();
-        ctx.drawImage(img, 0, 0, 64, 64);
+        // Recorta a parte direita da imagem onde está o emblema RG
+        const srcX = img.width * 0.62;
+        const srcY = img.height * 0.05;
+        const srcS = img.height * 0.90;
+        ctx.drawImage(img, srcX, srcY, srcS, srcS, 0, 0, 64, 64);
         const link = document.querySelector("link[rel='icon']");
         link.href = c.toDataURL('image/png');
       };
@@ -44,7 +48,7 @@
 
   <nav class="navbar">
     <a href="#home" class="nav-brand">
-      <img src="Captura de tela 2026-03-29 104303.png" alt="Criadouro RG" class="nav-logo" />
+      <img src="Captura de tela 2026-03-29 193706.png" alt="Criadouro RG" class="nav-logo" />
       <span>Criadouro RG</span>
     </a>
     <ul class="nav-links">
@@ -66,34 +70,49 @@
   </nav>
 
   <section id="home" class="hero">
-    <canvas id="hero-canvas"></canvas>
-    <div class="hero-split">
-
-      <div class="hero-inner">
-        <div class="hero-logo-wrap">
-          <img src="Captura de tela 2026-03-29 104303.png" alt="Criadouro RG" class="hero-logo" />
-        </div>
-        <p class="hero-label">Criatório Especializado</p>
-        <h1>Criadouro<br>RG</h1>
-        <p class="hero-sub">Dedicados à criação do Bicudo com excelência,<br>linhagem documentada e tradição.</p>
-        <a href="#catalogo" class="btn-primary">Ver Catálogo</a>
-      </div>
-
-      <div class="hero-gallery">
-        <div class="hg-slide hg-slide-1"><img src="hero-1.jpeg" alt="SCBC-BH" /></div>
-        <div class="hg-slide hg-slide-2"><img src="hero-2.jpeg" alt="Criadores" /></div>
-        <div class="hg-slide hg-slide-3"><img src="hero-3.jpeg" alt="Criadores" /></div>
-        <div class="hg-slide hg-slide-4"><img src="hero-4.jpeg" alt="Criadores" /></div>
-        <div class="hg-dots">
-          <span class="hg-dot hg-dot-1"></span>
-          <span class="hg-dot hg-dot-2"></span>
-          <span class="hg-dot hg-dot-3"></span>
-          <span class="hg-dot hg-dot-4"></span>
-        </div>
-      </div>
-
+    <div class="hero-bg">
+      <img src="hero-1.jpeg" alt="" />
     </div>
-    <div class="hero-line"></div>
+    <canvas id="hero-canvas"></canvas>
+
+    <div class="hero-side-text">Criadouro Especializado · Belo Horizonte · Est. 2010</div>
+
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-label-wrap">
+          <span class="hero-label-line"></span>
+          <span class="hero-label">Criatório Especializado</span>
+        </div>
+        <h1>Criação com<br><em>Excelência</em><br>e Tradição</h1>
+        <p class="hero-sub">Dedicados à criação do Bicudo com linhagem documentada e tradição familiar.</p>
+        <div class="hero-btns">
+          <a href="#catalogo" class="btn-primary">Ver Catálogo →</a>
+          <a href="https://wa.me/5531983198184" target="_blank" class="btn-outline">Falar com Criador</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-img-wrap">
+            <span class="hero-card-badge">Em Destaque</span>
+            <img src="big-atraente.jpg" alt="Big Atraente" class="hero-card-img" />
+          </div>
+          <div class="hero-card-body">
+            <p class="hero-card-location">Criadouro RG · Lagoa Santa — MG</p>
+            <h3 class="hero-card-name">Big Atraente</h3>
+            <p class="hero-card-tag">Linhagem Premium</p>
+            <p class="hero-card-details">Bicudo · Macho · Linhagem Documentada</p>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <div class="hero-badge-icon">✓</div>
+          <div class="hero-badge-text">
+            <strong>Linhagem Verificada</strong>
+            <span>Genealogia completa</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="sobre" class="sobre">
