@@ -678,16 +678,19 @@ body {
 .video-featured .video-thumb.playing .video-overlay {
   opacity: 1;
   pointer-events: auto;
-  background: transparent;
+  background: rgba(0,0,0,0.01); /* mínimo para iOS disparar click em div */
+  cursor: pointer;
 }
 
 .video-featured .video-thumb.playing .video-play {
-  opacity: 0.35;
-  background: rgba(0,0,0,0.4);
-  border-color: rgba(201,168,76,0.3);
+  opacity: 0.6;
+  background: rgba(0,0,0,0.5);
+  border-color: rgba(201,168,76,0.5);
+  pointer-events: none; /* clique vai pro overlay, não ao botão */
 }
 
-.video-featured .video-thumb.playing:hover .video-play {
+.video-featured .video-thumb.playing:hover .video-play,
+.video-featured .video-thumb.playing:focus-within .video-play {
   opacity: 1;
   background: rgba(201,168,76,0.28);
   border-color: var(--dourado);
