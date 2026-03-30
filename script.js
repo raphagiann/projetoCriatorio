@@ -126,7 +126,7 @@ const bicudos = [
   { id: 18, nome: "Big 245",        sexo: "Macho", pai: "Bigode Grosso", mae: "Manu V.C.",      foto: "big-245.jpg",       genealogia: `<img src="big-245.jpg"       alt="Big 245"       style="width:100%;border-radius:4px;">` },
   { id: 19, nome: "Big Atraente",   sexo: "Macho", pai: "Bigode Grosso", mae: "Sedutora",       foto: "big-atraente.jpg",  genealogia: `<img src="big-atraente.jpg"  alt="Big Atraente"  style="width:100%;border-radius:4px;">` },
   { id: 20, nome: "Rei Monet",      sexo: "Macho", pai: "Muralha II",    mae: "Fontana",        foto: "rei-monet.jpg",     genealogia: `<img src="rei-monet.jpg"     alt="Rei Monet"     style="width:100%;border-radius:4px;">` },
-  { id: 21, nome: "Traçado",        sexo: "Macho", pai: "Van Diesel",    mae: "Riscada",        foto: "tracado.jpg",       genealogia: `<img src="tracado.jpg"       alt="Traçado"       style="width:100%;border-radius:4px;">` }
+  { id: 21, nome: "Tracado",         sexo: "Macho", pai: "Van Diesel",    mae: "Riscada",        foto: "tracado.jpg",       genealogia: `<img src="tracado.jpg"       alt="Tracado"       style="width:100%;border-radius:4px;">` }
 ];
 
 function renderCatalogo() {
