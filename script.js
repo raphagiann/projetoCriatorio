@@ -125,7 +125,8 @@ const bicudos = [
   { id: 17, nome: "Toretto",        sexo: "Macho", pai: "Van Diesel",    mae: "Goyatriz Filha", foto: "toretto.jpg",       genealogia: `<img src="toretto.jpg"       alt="Toretto"       style="width:100%;border-radius:4px;">` },
   { id: 18, nome: "Big 245",        sexo: "Macho", pai: "Bigode Grosso", mae: "Manu V.C.",      foto: "big-245.jpg",       genealogia: `<img src="big-245.jpg"       alt="Big 245"       style="width:100%;border-radius:4px;">` },
   { id: 19, nome: "Big Atraente",   sexo: "Macho", pai: "Bigode Grosso", mae: "Sedutora",       foto: "big-atraente.jpg",  genealogia: `<img src="big-atraente.jpg"  alt="Big Atraente"  style="width:100%;border-radius:4px;">` },
-  { id: 20, nome: "Rei Monet",      sexo: "Macho", pai: "Muralha II",    mae: "Fontana",        foto: "rei-monet.jpg",     genealogia: `<img src="rei-monet.jpg"     alt="Rei Monet"     style="width:100%;border-radius:4px;">` }
+  { id: 20, nome: "Rei Monet",      sexo: "Macho", pai: "Muralha II",    mae: "Fontana",        foto: "rei-monet.jpg",     genealogia: `<img src="rei-monet.jpg"     alt="Rei Monet"     style="width:100%;border-radius:4px;">` },
+  { id: 21, nome: "Traçado",        sexo: "Macho", pai: "Van Diesel",    mae: "Riscada",        foto: "",                  genealogia: `<iframe src="tracado.pdf" style="width:100%;height:420px;border:none;border-radius:4px;" title="Genealogia Traçado"></iframe><a href="tracado.pdf" target="_blank" style="display:block;margin-top:0.75rem;text-align:center;color:var(--dourado);font-size:0.85rem;letter-spacing:0.04em;">Abrir PDF em nova aba ↗</a>` }
 ];
 
 function renderCatalogo() {
