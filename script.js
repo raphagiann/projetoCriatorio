@@ -203,6 +203,17 @@ function toggleMenu() {
   links.classList.toggle("open");
 }
 
+// ── TELA CHEIA ──
+function goFullscreen(btn) {
+  const video = btn.closest('.video-thumb').querySelector('.video-player');
+  if (!video) return;
+  if (video.requestFullscreen)            video.requestFullscreen();
+  else if (video.webkitEnterFullscreen)   video.webkitEnterFullscreen();
+  else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
+  else if (video.mozRequestFullScreen)    video.mozRequestFullScreen();
+  else if (video.msRequestFullscreen)     video.msRequestFullscreen();
+}
+
 // ── SCROLL SUAVE ──
 function smoothScrollTo(targetY, duration) {
   const startY = window.scrollY;

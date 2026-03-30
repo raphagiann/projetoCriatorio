@@ -804,6 +804,32 @@ body {
   padding-top: 0;
 }
 
+/* ── BOTÃO TELA CHEIA ── */
+.video-fullscreen {
+  display: none; /* visível só no mobile (via media query) */
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 3;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid rgba(255,255,255,0.18);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.video-fullscreen svg {
+  width: 17px;
+  height: 17px;
+  stroke: rgba(255,255,255,0.85);
+}
+
 @media (max-width: 1100px) {
   .video-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -811,30 +837,43 @@ body {
 @media (max-width: 860px) {
   .videos { padding: 4rem 1.5rem; }
   .video-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-  .video-thumb--large { aspect-ratio: 16 / 9; }
+  /* Featured claramente maior: proporção mais alta */
+  .video-thumb--large { aspect-ratio: 4 / 3; }
+  /* Grid cards: mais compactos para destacar o featured */
+  .video-grid .video-thumb { aspect-ratio: 16 / 10; }
   .video-title { font-size: 1rem; }
   .video-thumb--large .video-title { font-size: 1.25rem; }
   .video-play { width: 60px; height: 60px; }
   .video-play svg { width: 20px; height: 20px; }
+  /* Botão tela cheia visível no mobile */
+  .video-fullscreen { display: flex; }
+  .video-fullscreen:active {
+    background: rgba(201,168,76,0.35);
+    border-color: var(--dourado);
+  }
 }
 
 @media (max-width: 600px) {
   .videos { padding: 3rem 1rem; }
   .video-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-  .video-thumb--large { aspect-ratio: 16 / 9; }
-  .video-play { width: 56px; height: 56px; }
-  .video-play svg { width: 18px; height: 18px; }
-  .video-play--sm { width: 40px; height: 40px; }
-  .video-play--sm svg { width: 13px; height: 13px; }
+  .video-thumb--large { aspect-ratio: 4 / 3; }
+  .video-grid .video-thumb { aspect-ratio: 1 / 1; }
+  .video-play { width: 52px; height: 52px; }
+  .video-play svg { width: 17px; height: 17px; }
+  .video-play--sm { width: 36px; height: 36px; }
+  .video-play--sm svg { width: 12px; height: 12px; margin-left: 2px; }
   .video-meta { padding: 1rem 1rem 0.9rem; }
-  .video-title { font-size: 0.85rem; }
+  .video-title { font-size: 0.8rem; }
   .video-thumb--large .video-title { font-size: 1.1rem; }
-  .video-desc { font-size: 0.7rem; }
+  .video-desc { font-size: 0.68rem; }
+  .video-fullscreen { width: 34px; height: 34px; top: 0.6rem; right: 0.6rem; }
+  .video-fullscreen svg { width: 15px; height: 15px; }
 }
 
 @media (max-width: 380px) {
-  .video-grid { grid-template-columns: 1fr; }
-  .video-thumb--large { aspect-ratio: 4 / 3; }
+  .video-grid { grid-template-columns: repeat(2, 1fr); }
+  .video-thumb--large { aspect-ratio: 1 / 1; }
+  .video-grid .video-thumb { aspect-ratio: 1 / 1; }
 }
 
 /* ── CATÁLOGO ── */
