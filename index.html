@@ -18,37 +18,14 @@
   <meta name="description"        content="Criação especializada de Bicudos com excelência, linhagem documentada e tradição. Conheça nosso catálogo de exemplares selecionados." />
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="fotosevideos/Captura de tela 2026-03-29 193706.png" />
-  <script>
-    // Gera favicon circular dinamicamente
-    (function() {
-      const img = new Image();
-      img.src = 'fotosevideos/Captura de tela 2026-03-29 193706.png';
-      img.onload = function() {
-        const c = document.createElement('canvas');
-        c.width = c.height = 64;
-        const ctx = c.getContext('2d');
-        ctx.beginPath();
-        ctx.arc(32, 32, 32, 0, Math.PI * 2);
-        ctx.closePath();
-        ctx.clip();
-        // Recorta a parte direita da imagem onde está o emblema RG
-        const srcX = img.width * 0.62;
-        const srcY = img.height * 0.05;
-        const srcS = img.height * 0.90;
-        ctx.drawImage(img, srcX, srcY, srcS, srcS, 0, 0, 64, 64);
-        const link = document.querySelector("link[rel='icon']");
-        link.href = c.toDataURL('image/png');
-      };
-    })();
-  </script>
+  <link rel="icon" href="fotosevideos/download.png" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
   <nav class="navbar">
     <a href="#home" class="nav-brand">
-      <img src="fotosevideos/Captura de tela 2026-03-29 193706.png" alt="Criadouro RG" class="nav-logo" />
+      <img src="fotosevideos/download.png" alt="Criadouro RG" class="nav-logo" />
       <span>Criadouro RG</span>
     </a>
     <ul class="nav-links">

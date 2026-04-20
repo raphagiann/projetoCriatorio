@@ -80,8 +80,8 @@ body {
 .nav-logo {
   height: 38px;
   width: 38px;
-  object-fit: cover;
-  object-position: 88% 50%;
+  object-fit: contain;
+  object-position: center;
   border-radius: 50%;
   border: 1.5px solid rgba(201,168,76,0.7);
   box-shadow: 0 0 0 3px rgba(201,168,76,0.08), 0 0 14px rgba(201,168,76,0.18);
