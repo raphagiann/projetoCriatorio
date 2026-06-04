@@ -115,7 +115,6 @@ function selectGridVideo(gridCard) {
 // ── CATÁLOGO ──
 const bicudos = [
   { id: 2,  nome: "Big Boss",       sexo: "Macho", pai: "Juninho CLB",   mae: "Big 131 CLB",    foto: "fotosevideos/big-boss.jpg",      genealogia: `<img src="fotosevideos/big-boss.jpg"      alt="Big Boss"      style="width:100%;border-radius:4px;">` },
-  { id: 3,  nome: "Big Impacto",    sexo: "Macho", pai: "De La Cruz",    mae: "Big Traira",     foto: "fotosevideos/big-impacto.jpg",   genealogia: `<img src="fotosevideos/big-impacto.jpg"   alt="Big Impacto"   style="width:100%;border-radius:4px;">` },
   { id: 7,  nome: "Colossu",       sexo: "Macho", pai: "Rodhes",        mae: "Cassaca",        foto: "fotosevideos/colossu.jpg",       genealogia: `<img src="fotosevideos/colossu.jpg"       alt="Colossus"      style="width:100%;border-radius:4px;">` },
   { id: 9,  nome: "Fininho",        sexo: "Macho", pai: "De La Cruz",    mae: "Dama de Ouro",   foto: "fotosevideos/fininho.jpg",       genealogia: `<img src="fotosevideos/fininho.jpg"       alt="Fininho"       style="width:100%;border-radius:4px;">` },
   { id: 11, nome: "Magia Negra",    sexo: "Macho", pai: "Jeferson",      mae: "Afortunada",     foto: "fotosevideos/magia-negra.jpg",   genealogia: `<img src="fotosevideos/magia-negra.jpg"   alt="Magia Negra"   style="width:100%;border-radius:4px;">` },
@@ -124,9 +123,12 @@ const bicudos = [
   { id: 16, nome: "Madrileño",      sexo: "Macho", pai: "Madrid",        mae: "Amsterdã",       foto: "fotosevideos/madrileno.jpg",     genealogia: `<img src="fotosevideos/madrileno.jpg"     alt="Madrileño"     style="width:100%;border-radius:4px;">` },
   { id: 17, nome: "Toretto",        sexo: "Macho", pai: "Van Diesel",    mae: "Goyatriz Filha", foto: "fotosevideos/toretto.jpg",       genealogia: `<img src="fotosevideos/toretto.jpg"       alt="Toretto"       style="width:100%;border-radius:4px;">` },
   { id: 18, nome: "Big 245",        sexo: "Macho", pai: "Bigode Grosso", mae: "Manu V.C.",      foto: "fotosevideos/big-245.jpg",       genealogia: `<img src="fotosevideos/big-245.jpg"       alt="Big 245"       style="width:100%;border-radius:4px;">` },
-  { id: 19, nome: "Big Atraente",   sexo: "Macho", pai: "Bigode Grosso", mae: "Sedutora",       foto: "fotosevideos/big-atraente.jpg",  genealogia: `<img src="fotosevideos/big-atraente.jpg"  alt="Big Atraente"  style="width:100%;border-radius:4px;">` },
   { id: 20, nome: "Rei Monet",      sexo: "Macho", pai: "Muralha II",    mae: "Fontana",        foto: "fotosevideos/rei-monet.jpg",     genealogia: `<img src="fotosevideos/rei-monet.jpg"     alt="Rei Monet"     style="width:100%;border-radius:4px;">` },
-  { id: 21, nome: "Traçado",         sexo: "Macho", pai: "Van Diesel",    mae: "Riscada",        foto: "fotosevideos/tracado.jpg",       genealogia: `<img src="fotosevideos/tracado.jpg"       alt="Traçado"       style="width:100%;border-radius:4px;">` }
+  { id: 21, nome: "Traçado",         sexo: "Macho", pai: "Van Diesel",    mae: "Riscada",        foto: "fotosevideos/tracado.jpg",       genealogia: `<img src="fotosevideos/tracado.jpg"       alt="Traçado"       style="width:100%;border-radius:4px;">` },
+  { id: 22, nome: "Fortuna Filho",   sexo: "Macho", pai: "Fortuna",       mae: "Lelezinha",      foto: "fotosevideos/fortuna-filho_certificado.jpg",      genealogia: `<iframe src="fotosevideos/fortuna-filho_certificado.pdf" style="width:100%;height:520px;border:none;border-radius:4px;"></iframe><p style="text-align:center;margin-top:8px;"><a href="fotosevideos/fortuna-filho_certificado.pdf" target="_blank" style="color:#c8a84b;font-size:13px;">&#128196; Abrir certificado em nova aba</a></p>` },
+  { id: 23, nome: "Atraente Filho",  sexo: "Macho", pai: "Big Atraente",   mae: "Big Ju",         foto: "fotosevideos/atraente-filho_certificado.jpg",     genealogia: `<img src="fotosevideos/atraente-filho_certificado.jpg" alt="Atraente Filho" style="width:100%;border-radius:4px;">` },
+  { id: 24, nome: "Van Bela",        sexo: "Macho", pai: "Van Diesel",    mae: "Goyatriz Filha", foto: "fotosevideos/van-bela_certificado.jpg",           genealogia: `<img src="fotosevideos/van-bela_certificado.jpg"      alt="Van Bela"      style="width:100%;border-radius:4px;">` },
+  { id: 25, nome: "Dark Horse",      sexo: "Macho", pai: "Van Diesel",    mae: "Goyatriz Filha", foto: "fotosevideos/dark-horse_certificado.jpg",         genealogia: `<img src="fotosevideos/dark-horse_certificado.jpg"    alt="Dark Horse"    style="width:100%;border-radius:4px;">` }
 ];
 
 function renderCatalogo() {

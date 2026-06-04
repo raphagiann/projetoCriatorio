@@ -937,6 +937,7 @@ body {
   aspect-ratio: 3 / 2;
   overflow: hidden;
   border-bottom: 1px solid var(--borda);
+  position: relative;
 }
 
 .bird-foto img {
